@@ -1,7 +1,7 @@
 //
 //  Q10828(2).cpp
 //  001.Stack&Queue
-//
+//  Stack 을 사용한 문제 풀이
 //  Created by Kong Nayeon  on 2022/03/17.
 //
 
