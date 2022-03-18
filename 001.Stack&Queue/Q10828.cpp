@@ -9,21 +9,33 @@
 #include <string.h>
 using namespace std;
 
-#define MAX_STACK_SIZE 100
+#define MAX_STACK_SIZE 10001
 
+//스택 클래스 정의
 class Stack{
 public:
     int stack[MAX_STACK_SIZE];
     int top;
+    
+    //생성자
     Stack(){
         top = -1;
     }
+    
+    //공백 확인
     int is_empty(){
         if (top < 0) return 1;
         else return 0;
     }
+    
+    int is_full(){
+        if(top == MAX_STACK_SIZE-1) return 1;
+        else return 0;
+    }
+    
+    //스택에 값을 넣어줌
     void push(int e){
-        else stack[++top] = e;
+        if(!is_full()) stack[++top] = e;
     }
     int pop(){
         if(is_empty()==1){
@@ -44,23 +56,23 @@ int main(){
     Stack s;
     int num =0;
     cin >> num;
-    char a[10];
-    for(int i = 0; i<=num; i++){
+    string a;
+    for(int i = 0; i<num; i++){
         cin >> a;
-        if (!strcmp(a, "push")){
+        if (a== "push"){
             int element;
             if(!s.is_full()){
                 cin >> element;
                 s.push(element);
             }
         }
-        else if(!strcmp(a, "pop"))
+        else if(a == "pop")
             cout << s.pop()<<endl;
-        else if(!strcmp(a, "top"))
+        else if(a == "top")
             cout<<s.getTop()<<endl;
-        else if (!strcmp(a, "size"))
+        else if (a == "size")
             cout << s.getSize()<<endl;
-        else if (!strcmp(a, "empty"))
+        else if (a == "empty")
             cout << s.is_empty()<<endl;
     }
     return 0;
