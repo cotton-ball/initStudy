@@ -9,7 +9,7 @@
 #include <string.h>
 using namespace std;
 
-#define MAX_STACK_SIZE 10001
+#define MAX_STACK_SIZE 100
 
 //스택 클래스 정의
 class Stack{
@@ -28,6 +28,7 @@ public:
         else return 0;
     }
     
+    //포화상태 확인
     int is_full(){
         if(top == MAX_STACK_SIZE-1) return 1;
         else return 0;
@@ -37,15 +38,21 @@ public:
     void push(int e){
         if(!is_full()) stack[++top] = e;
     }
+    
+    //스택의 맨 위에서 값을 빼서 반환한다
     int pop(){
         if(is_empty()==1){
             return -1;
         }
         else return stack[top--];
     }
+    
+    //스택의 사이즈를 반환
     int getSize(){
         return top+1;
     }
+    
+    //스택의 맨 위 요소를 반환한다
     int getTop(){
         if(is_empty()==1) return -1;
         else return stack[top];
