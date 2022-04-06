@@ -43,10 +43,12 @@ TreeNode* searchNode(TreeNode *tree,char data){
     return NULL;
 }
 
+//노드 추가
 void insertNode(TreeNode* tree, char a ,char b, char c){
     
     tree -> data = a;
     
+    //'.'이 들어오면 값을 넣지 않는다
     if(b!='.') tree->left = newNode(b);
     else tree->left =NULL;
     if(c!='.') tree->right = newNode(c);
