@@ -13,7 +13,7 @@ int n, a[12], opr[4];
 int maxvalue = -2147483647, minvalue = 2147483647;
 int visited[11];
 
-void calc(){
+void operate(){
     int tmp = a[0];
     for(int i = 1; i < n; i++){
         switch (visited[i]) {
@@ -38,7 +38,7 @@ void calc(){
 
 void DFS(int node){
     if (node == n){
-        calc(); return;
+        operate(); return;
     }
     for(int i = 0; i < 4; i++){
         if(opr[i]==0) continue;
