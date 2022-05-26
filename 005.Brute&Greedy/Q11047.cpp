@@ -8,15 +8,13 @@
 using namespace std;
 
 int main(){
-    
     int num, cash , cnt = 0 ;
     int arr[10];
 
     cin >> num >> cash;
     
-    for(int i = 0; i< num; i++){
+    for(int i = 0; i< num; i++)
         cin >> arr[i];
-    }
     
     num--;
     while(num>=0){

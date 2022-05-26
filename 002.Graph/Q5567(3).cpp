@@ -48,6 +48,7 @@ int main(){
         if (friends[i]== true)
             weddingFriends++;
     
-    cout << weddingFriends-1<<endl;
+    if (weddingFriends == 0 ) cout << weddingFriends << endl;
+    else  cout << weddingFriends-1<<endl;
 }
 
